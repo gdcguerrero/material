@@ -1,0 +1,33 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-container {
+    width: auto;
+    height: 100%;
+    background-color: white;
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    background-color: rgb(63, 81, 181);
+}
+
+.img-size-menu{
+    width: auto;
+    height: 130px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.active {
+    background-color: rgb(173, 216, 230);
+}
