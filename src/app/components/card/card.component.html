@@ -2,11 +2,10 @@
     <mat-card-header>
         <mat-card-title>{{apiMovieCard.title}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-xl-image [src]="'https://image.tmdb.org/t/p/w200/'+apiMovieCard.backdrop_path">
     <mat-card-content>
-        {{apiMovieCard.overview}}
+        <p>{{apiMovieCard.overview}}</p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions align="end">
         <button mat-icon-button  aria-label="Example icon-button with heart icon">
             <mat-icon>favorite</mat-icon>
         </button>
