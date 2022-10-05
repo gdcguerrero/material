@@ -1,5 +1,8 @@
-<mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
-    {{tile.text}}
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container m-3">
+  <h2 card-title>Action</h2>
+</div>
+<ng-container *ngFor="let movie of apiMovie">
+  <mat-card (click)="openDialog(movie.id)" class="example-card">
+    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path">
+  </mat-card>
+</ng-container>

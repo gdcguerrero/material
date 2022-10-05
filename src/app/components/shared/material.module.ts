@@ -11,18 +11,22 @@ import { Pagina2Component } from '../pagina2/pagina2.component';
 import { Pagina3Component } from '../pagina3/pagina3.component';
 import { Pagina4Component } from '../pagina4/pagina4.component';
 import { RouterModule } from '@angular/router';
-import {MatListModule} from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatTableModule} from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { CardComponent } from '../card/card.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     Pagina1Component,
     Pagina2Component,
     Pagina3Component,
-    Pagina4Component
+    Pagina4Component,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +41,9 @@ import {MatTableModule} from '@angular/material/table';
     MatGridListModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
+    MatDialogModule
   ],
   exports: [
     MatToolbarModule,
@@ -54,7 +60,10 @@ import {MatTableModule} from '@angular/material/table';
     MatGridListModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
+    CardComponent,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
