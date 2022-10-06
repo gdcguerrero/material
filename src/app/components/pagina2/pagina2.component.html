@@ -1,5 +1,5 @@
-<mat-tab-group>
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
-  </mat-tab-group>
+<ng-container *ngFor="let movie of apiMovie">
+  <mat-card (click)="openDialog(movie.id)" class="example-card">
+    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path">
+  </mat-card>
+</ng-container>

@@ -1,1 +1,5 @@
-<mat-spinner></mat-spinner>
+<ng-container *ngFor="let movie of apiMovie">
+    <mat-card (click)="openDialog(movie.id)" class="example-card">
+      <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path">
+    </mat-card>
+  </ng-container>

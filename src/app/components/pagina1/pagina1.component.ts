@@ -32,7 +32,7 @@ export class Pagina1Component implements OnInit{
       return resp;
     })
   }
-
+}
   // -----------------------------------  map christian
   // getMovies(): Observable<any>{
   //   return this.http.get(this.apiMovie).pipe(
@@ -49,5 +49,3 @@ export class Pagina1Component implements OnInit{
   //     })
   //   )
   // }
-
-}

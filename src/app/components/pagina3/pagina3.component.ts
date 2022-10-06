@@ -1,38 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+import { MatDialog } from '@angular/material/dialog';
+import { CardComponent } from '../card/card.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pagina3',
   templateUrl: './pagina3.component.html',
   styleUrls: ['./pagina3.component.scss']
 })
-export class Pagina3Component implements OnInit {
+export class Pagina3Component implements OnInit{
+  
+  public apiMovie!: any;
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getData()
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-
+  openDialog(id: number) {
+    console.log('open > ',id);
+    this.dialog.open(CardComponent,{
+      data: id
+    });
+  }
+  
+  getData() {
+    const user = 'https://api.themoviedb.org/3/discover/movie?api_key=ee0e78a4218de29740513ad6fc39e3b8&language=es-MX&region=MX&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=1&with_genres=16&with_watch_monetization_types=buy';
+    let response = this.http.get(user).subscribe((resp:any) => {
+      this.apiMovie = resp['results']
+      return resp;
+    })
+  }
 }
