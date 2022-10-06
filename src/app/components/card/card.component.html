@@ -1,16 +1,18 @@
-<mat-card class="example-card">
+<div class="img-card" [ngStyle]="{ 'background-image' : 'url(https://image.tmdb.org/t/p/w500'+apiMovieCard.poster_path+')'}">
     <mat-card-header>
         <mat-card-title>{{apiMovieCard.title}}</mat-card-title>
     </mat-card-header>
+</div>
+<mat-card class="example-card">
     <mat-card-content>
         <p>{{apiMovieCard.overview}}</p>
     </mat-card-content>
-    <mat-card-actions align="end">
-        <button mat-icon-button  aria-label="Example icon-button with heart icon">
+    <div align="end">
+        <button mat-icon-button  aria-label="Example icon-button with heart icon" class="example-icon">
             <mat-icon>favorite</mat-icon>
         </button>
-        <button mat-icon-button  aria-label="Example icon-button with heart icon">
+        <button mat-icon-button  aria-label="Example icon-button with heart icon" class="example-icon">
             <mat-icon>add</mat-icon>
         </button>
-    </mat-card-actions>
+    </div>
 </mat-card>
