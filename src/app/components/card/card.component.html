@@ -8,11 +8,13 @@
         <p>{{apiMovieCard.overview}}</p>
     </mat-card-content>
     <div align="end">
-        <button mat-icon-button  aria-label="Example icon-button with heart icon" class="example-icon">
-            <mat-icon>favorite</mat-icon>
+        <button mat-icon-button class="example-icon" (click)="favorites()">
+            <mat-icon *ngIf="service.checkFavorites(apiMovieCard.id)" style="color: red;">favorite</mat-icon>
+            <mat-icon *ngIf="!service.checkFavorites(apiMovieCard.id)">favorite</mat-icon>
         </button>
-        <button mat-icon-button  aria-label="Example icon-button with heart icon" class="example-icon">
-            <mat-icon>add</mat-icon>
+        <button mat-icon-button class="example-icon" (click)="lists()">
+            <mat-icon *ngIf="service.checkLists(apiMovieCard.id)" style="color: green;">check</mat-icon>
+            <mat-icon *ngIf="!service.checkLists(apiMovieCard.id)">add</mat-icon>
         </button>
     </div>
 </mat-card>

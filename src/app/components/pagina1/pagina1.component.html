@@ -1,4 +1,4 @@
-<ng-container *ngFor="let movie of apiMovie">
+<ng-container *ngFor="let movie of apiMovie" class="text-center">
   <mat-card (click)="openDialog(movie.id)" class="example-card">
     <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path">
   </mat-card>

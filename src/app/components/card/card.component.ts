@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MoviedbService } from '../services/moviedb.service';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +10,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class CardComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private http: HttpClient) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private http: HttpClient, public service: MoviedbService) { }
 
   public apiMovieCard!: any;
 
@@ -26,5 +27,20 @@ export class CardComponent implements OnInit {
     })
   }
 
+  lists(){
+    if (this.service.checkLists(this.apiMovieCard.id)) {
+      this.service.removeLists(this.apiMovieCard.id)
+    } else {
+      this.service.addLists(this.apiMovieCard.id)
+    }
+  }
+
+  favorites(){
+    if (this.service.checkFavorites(this.apiMovieCard.id)) {
+      this.service.removeFavorites(this.apiMovieCard.id)
+    } else {
+      this.service.addFavorites(this.apiMovieCard.id)
+    }
+  }
 
 }

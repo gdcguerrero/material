@@ -8,7 +8,7 @@
 .example-container {
     width: auto;
     height: 93.2vh;
-    background-color: #3F0071;
+    background-color: #212121;
 }
 
 .example-sidenav-content {
@@ -20,10 +20,10 @@
 
 .example-sidenav {
     height: 100%;
-    background-color: #000000;
+    background-color: #E91E63;
 }
 
-.img-size-menu{
+.img-size-menu {
     width: auto;
     height: 130px;
     border-radius: 10px;
@@ -31,18 +31,23 @@
 }
 
 .active {
-    background-color: #3F0071; //29014b
+    background-color: #212121;
 }
 
-.mat-toolbar{
-    background-color: #000000;
+.mat-toolbar {
+    background-color: #E91E63;
     color: white;
 }
 
-.mat-drawer{
-    .mat-list{
-        .mat-list-item{
+.mat-drawer {
+    .mat-list {
+        .mat-list-item {
             color: white;
         }
     }
+}
+
+mat-drawer-content {
+    padding: 10px;
+    color: white;
 }
